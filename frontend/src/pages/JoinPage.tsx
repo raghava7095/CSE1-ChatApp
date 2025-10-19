@@ -25,7 +25,7 @@ const JoinPage = ({ onJoin }: JoinPageProps) => {
 
     try {
       console.log('Sending request to /api/join');
-      const response = await axios.post('http://localhost:3000/api/join', { password });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:3000'}/api/join`, { password });
       console.log('Response received:', response.data);
       
       if (response.data.success) {
