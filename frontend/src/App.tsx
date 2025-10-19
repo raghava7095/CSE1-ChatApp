@@ -21,7 +21,7 @@ function App() {
       socket.disconnect();
     }
     
-    const newSocket = io('http://localhost:3000', {
+    const newSocket = io(import.meta.env.VITE_API_URL || 'http://localhost:3000', {
       withCredentials: true,
       extraHeaders: {
         'my-custom-header': 'abcd',
